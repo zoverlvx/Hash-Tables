@@ -1,7 +1,7 @@
 # '''
 # Linked List hash table key/value pair
 # '''
-from typing import Tuple, List
+from typing import Tuple, List, Any, Union
 
 
 class LinkedPair:
@@ -59,7 +59,7 @@ class HashTableArray:
             self.storage[index] = (key, value)
             print("Key-value successfully stored.")
 
-    def remove(self, key) -> Tuple[int, Any] | None:
+    def remove(self, key) -> Union[Tuple[int, Any], None]:
         '''
         Remove the value stored with the given key.
 
@@ -81,7 +81,7 @@ class HashTableArray:
 
         return old_item
 
-    def retrieve(self, key) -> Any | None:
+    def retrieve(self, key) -> Union[Any, None]:
         '''
         Retrieve the value stored with the given key.
 
@@ -204,7 +204,7 @@ class HashTable:
                     return None
             print(f"WARNING: Key {key} not found")
 
-    def retrieve(self, key) -> None | Any:
+    def retrieve(self, key) -> Union[None, Any]:
         '''
         Retrieve the value stored with the given key.
 
